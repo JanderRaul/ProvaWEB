@@ -56,11 +56,6 @@
 			<?php } ?>			
 		</div>
 	</div>	
-	<div class="contatos" id="ct">
-		<h4 style="font-family: 'New Rocker', cursive; font-size: 20px; margin-left: 10px; color: #fff; padding: 5px; margin-top: 10px; padding: 10px;">Contatos</h4>
-		<div class="center contatos">
-			<p style="color: #fff">dsdadasdasd asdasdasd asd asd asd a sdasdasdasda asdasdasdasdas asdasdasdasd sadasdasdasdas dasdasdas</p>
-		</div>
-	</div>
+	<?php include('templates/contatos.php') ?>
 	<?php include('templates/footer.php') ?>
 </html>
