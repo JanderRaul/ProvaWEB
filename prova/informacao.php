@@ -21,9 +21,9 @@
 	//Remove a pizza do banco de dados
     if(isset($_POST['delete'])) {
         //Limpando a query
-        $id_banda = mysqli_real_escape_string($conn, $_POST['id_banda']);
+        $id = mysqli_real_escape_string($conn, $_POST['id_banda']);
         //Montando a query
-        $sql = "DELETE FROM tb_banda WHERE id_banda = $id_banda";
+        $sql = "DELETE FROM tb_banda WHERE id_banda = $id";
         //Removendo do banco
         if(mysqli_query($conn, $sql)){
             //Sucesso
@@ -46,7 +46,7 @@
 				<input type="submit" name="alterarBND" value="Editar" class="btn black z-depth-0">
 			</form>
 			<form action="informacao.php" method="POST">
-                    <input type="hidden" name="id" value="<?php echo $banda['id_banda']; ?>">
+                    <input type="hidden" name="id_banda" value="<?php echo $banda['id_banda']; ?>">
                     <input type="submit" name="delete" value="Remover" class="btn red z-depth-0">
                 </form>		
 		</div>

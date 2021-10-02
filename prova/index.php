@@ -1,6 +1,7 @@
 <?php
 	include('config/bd_conexao.php');
 
+	
 	//query para buscar
 	$sql = "SELECT b.nm_banda, l.data, l.id FROM tb_banda b, tb_local l WHERE b.id_banda = l.id_banda ORDER BY data ASC";
 	$result = mysqli_query($conn, $sql);
