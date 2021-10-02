@@ -3,6 +3,30 @@
     $erros = array('nm_banda' => '', 'data' => '', 'horario' => '', 'local' => '', 'estoque' => '', 'id_banda' => '', 'formulario' => '');
     $nm_banda = $data = $horario = $local = $estoque = $id_banda = $banda = '';
 
+	if(isset($_POST['alterar'])){
+		//Limpa os dados de sql injection
+		$id = mysqli_real_escape_string($conn,$_POST['id']);
+		
+		//Monta a query
+		$sql = "SELECT * FROM tb_local l INNER JOIN tb_banda b ON b.id_banda = l.id_banda WHERE l.id = $id;";
+		
+		//Executa a query e guarda em $result
+		$result = mysqli_query($conn,$sql);
+		
+		//Busca o resultado em forma de vetor
+		$show = mysqli_fetch_assoc($result);
+		
+		$nm_banda = $show['nm_banda'];
+		$data = $show['data'];
+		$horario = $show['horario'];		
+		$local = $show['local'];		
+		$estoque = $show['estoque'];		
+		
+		mysqli_free_result($result);
+		
+		mysqli_close($conn);	
+	}
+	
 	if (isset($_POST['enviar'])){
 		
 		if (empty($_POST['nm_banda'])){
@@ -15,7 +39,7 @@
 			$banda = mysqli_fetch_assoc($result);
 			
 			if($result){
-				$id_banda = $banda['id_banda'];
+				$id_banda = $banda['id'];
 			}else{
 				$erros['nm_banda'] = 'Banda não cadastrada';
 			}

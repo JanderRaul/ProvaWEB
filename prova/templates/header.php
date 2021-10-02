@@ -192,6 +192,15 @@
 		.btn2 button:hover{
 			transform: scale(0.95);
 		}
+		.titulo-inf{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+		}
+		.titulo-inf form{
+			margin: 20px;
+		}
 	</style>
 </head>
 <body style="background-color: #000;">
