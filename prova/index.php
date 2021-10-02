@@ -2,11 +2,11 @@
 	include('config/bd_conexao.php');
 
 	//query para buscar
-	$sql = "SELECT b.nm_banda, l.data, l.id FROM tb_banda b, tb_local l WHERE b.id = l.id_banda ORDER BY data ASC";
+	$sql = "SELECT b.nm_banda, l.data, l.id FROM tb_banda b, tb_local l WHERE b.id_banda = l.id_banda ORDER BY data ASC";
 	$result = mysqli_query($conn, $sql);
 	$shows = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-	$sql2 = "SELECT nm_banda, id FROM tb_banda ORDER BY nm_banda ASC";
+	$sql2 = "SELECT nm_banda, id_banda FROM tb_banda ORDER BY nm_banda ASC";
 	$result2 = mysqli_query($conn, $sql2);
 	$bandas = mysqli_fetch_all($result2, MYSQLI_ASSOC);
 
@@ -32,7 +32,7 @@
 							<h6 class="center" style="font-family: 'New Rocker', cursive; font-size: 32px; border-radius: 10px; background: #FFF; padding: 30px 10px; color: #010f1f;"><?php echo htmlspecialchars($show['nm_banda']); ?></h6>
 						</div>
 						<div class="card-action right-align" style="border-radius: 10px">
-							<a class="brand-text" href="detalhes.php?id=<?php echo $show['id'] ?>">Comprar Ingresso</a>
+							<a class="brand-text" href="informacaoShow.php?id=<?php echo $show['id'] ?>">Comprar Ingresso</a>
 						</div>
 					</div>
 				</div>
@@ -49,7 +49,7 @@
 							<h6 class="center" style="font-family: 'New Rocker', cursive; font-size: 32px; border-radius: 10px; background: #FFF; padding: 30px 10px; color: #010f1f;"><?php echo htmlspecialchars($banda['nm_banda']); ?></h6>
 						</div>
 						<div class="card-action right-align" style="border-radius: 10px">
-							<a class="brand-text" href="informacao.php?id=<?php echo $banda['id'] ?>">Informações</a>
+							<a class="brand-text" href="informacao.php?id=<?php echo $banda['id_banda'] ?>">Informações</a>
 						</div>
 					</div>
 				</div>
