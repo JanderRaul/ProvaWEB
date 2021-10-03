@@ -1,7 +1,7 @@
 <?php 
 	include('config/bd_conexao.php');
-    $erros = array('nm_banda' => '', 'data' => '', 'horario' => '', 'local' => '', 'estoque' => '', 'id_banda' => '', 'formulario' => '');
-    $nm_banda = $data = $horario = $local = $estoque = $id_banda = $banda = '';
+    $erros = array('preco' => '', 'nm_banda' => '', 'data' => '', 'horario' => '', 'local' => '', 'estoque' => '', 'id_banda' => '', 'formulario' => '');
+    $preco = $nm_banda = $data = $horario = $local = $estoque = $id_banda = $banda = '';
 
 	if (isset($_POST['enviar'])){
 		
@@ -59,6 +59,16 @@
             }
 		}
 
+		if (empty($_POST['preco'])){
+			$erros['preco'] = 'Campo obrigatorio';
+		} else{
+			$preco = $_POST['preco'];
+			if (!preg_match('/^[0-9,0-9]*$/', $preco)){
+				$erros['preco'] = 'O preco devem conter somente numeros';
+                $preco = '';
+            }
+		}
+
 		if (empty($_POST['estoque'])){
 			$erros['estoque'] = 'Campo obrigatorio';
 		} else{
@@ -74,19 +84,18 @@
         }else {		
 
 			// Limpador de codigos
-            
+            $preco = mysqli_real_escape_string($conn, $_POST['preco']);
             $data = mysqli_real_escape_string($conn, $_POST['data']);
             $horario = mysqli_real_escape_string($conn, $_POST['horario']);
             $estoque = mysqli_real_escape_string($conn, $_POST['estoque']);
             $local = mysqli_real_escape_string($conn, $_POST['local']);
 
 			// Criando a query
-			$sql = "INSERT INTO tb_local(id_banda, data, horario, estoque, local) VALUES('$id_banda', '$data', '$horario', '$estoque', '$local')";
+			$sql = "INSERT INTO tb_local(id_banda, data, horario, estoque, local, preco) VALUES('$id_banda', '$data', '$horario', '$estoque', '$local', '$preco')";
 			
 			// Salva no banco de dados
 			if(mysqli_query($conn, $sql)){
-				//Sucesso
-				header('Location: index.php');
+				header('Location: index.php');		
 			}else{
 				echo 'query error: '.mysqli_error($conn);
 			}
@@ -126,6 +135,11 @@
 						<label>Local</label>
 						<input type="text" placeholder="Digite o local do show..." name="local" value="<?php echo $local ?>">
 						<div class="red-text"><?php echo $erros['local']; ?></div>	
+					</div>
+					<div class="field input">
+						<label>Preço</label>
+						<input type="text" placeholder="Digite o preço do ingresso" name="preco" value="<?php echo $preco ?>">
+						<div class="red-text"><?php echo $erros['preco']; ?></div>	
 					</div>
 					<div class="field button">
 						<input type="submit" name="enviar" value="Cadastrar">

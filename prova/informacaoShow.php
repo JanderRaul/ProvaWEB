@@ -46,9 +46,9 @@
 				<input type="submit" name="alterarSHOW" value="Editar" class="btn black z-depth-0">
 			</form>
 			<form action="informacaoShow.php" method="POST">
-                    <input type="hidden" name="id" value="<?php echo $show['id']; ?>">
-                    <input type="submit" name="delete" value="Remover" class="btn red z-depth-0">
-                </form>		
+                <input type="hidden" name="id" value="<?php echo $show['id']; ?>">
+                <input type="submit" name="delete" value="Remover" class="btn red z-depth-0">
+            </form>		
 		</div>
 		<div class="col s12 md3" style="margin: 0 30px; padding-bottom: 10px;">
 			<div class="card z-depth-0" style="font-size: 17px; border-radius: 10px; background: #010f1f; color: #fff;">
@@ -61,9 +61,17 @@
 					<h6 class="center" style="font-family: 'New Rocker', cursive; font-size: 32px; border-radius: 10px; background: #FFF; padding: 30px 10px; color: #010f1f;"><?php echo htmlspecialchars($show['local']); ?></h6>
                     <span>Estoque</span>
 					<h6 class="center" style="font-family: 'New Rocker', cursive; font-size: 32px; border-radius: 10px; background: #FFF; padding: 30px 10px; color: #010f1f;"><?php echo htmlspecialchars($show['estoque']); ?></h6>
+                    <span>Preço Inteiro</span>
+					<h6 class="center" style="font-family: 'New Rocker', cursive; font-size: 32px; border-radius: 10px; background: #FFF; padding: 30px 10px; color: #010f1f;">R$ <?php echo htmlspecialchars($show['preco']); ?></h6>
 				</div>
 			</div>
 		</div>
+        <div class="center">
+            <form action="comprar.php" method="POST">
+                <input type="hidden" name="id" value="<?php echo $show['id']; ?>">
+                <input type="submit" name="comprar" value="Comprar" class="btn green z-depth-0">
+            </form>
+        </div>	
 	</div>
 	<?php include('templates/footer.php') ?>
 </html>
