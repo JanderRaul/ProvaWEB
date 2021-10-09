@@ -39,6 +39,7 @@
 			$erros['tipo'] = 'Campo obrigatorio';
 		} else{
             $tipo = $_POST['tipo'];
+			$tipo = strtoupper($tipo);
 			if (!preg_match('/^([A-Za-z])*$/',
 			$tipo)){
 				$erros['tipo'] = 'Deve conter somente letras';
@@ -83,6 +84,11 @@
 
 				$valor = $preco / 2;
 			}else{
+				$sql4 = "SELECT preco FROM tb_local WHERE id = $id";
+				$result = mysqli_query($conn,$sql4);
+				$local = mysqli_fetch_assoc($result);
+				$preco = $local['preco'];
+
 				$valor = $preco;
 			}
             $nome = mysqli_real_escape_string($conn, $_POST['nome']);
