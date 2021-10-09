@@ -42,8 +42,8 @@
 		<div class="titulo-inf">
 			<h4 style="font-family: 'New Rocker', cursive; font-size: 48px; border-radius: 10px; background: #FFF; padding: 30px 10px; color: #010f1f;"><?php echo htmlspecialchars($show['nm_banda']); ?></h4>
 			<form action="alterarSHOW.php" method="POST">
-				<input type="hidden" name="id" value="<?php echo $show['id']; ?>">
-				<input type="submit" name="alterarSHOW" value="Editar" class="btn black z-depth-0">
+				<input type="hidden" name="id_show" value="<?php echo $show['id']; ?>">
+				<input type="submit" name="alterar" value="Editar" class="btn black z-depth-0">
 			</form>
 			<form action="informacaoShow.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $show['id']; ?>">

@@ -62,7 +62,7 @@
             $erros['formulario'] = 'Erro no formulario';
         }else{
 			// Limpador de codigos
-            $id_banda = mysqli_real_escape_string($conn,$_POST['id_banda']);
+            $id_banda = mysqli_real_escape_string($conn,$_POST['id']);
             $nm_banda = mysqli_real_escape_string($conn, $_POST['nm_banda']);
             $descricao = mysqli_real_escape_string($conn, $_POST['descricao']);
             $integrantes = mysqli_real_escape_string($conn, $_POST['integrantes']);
@@ -89,6 +89,7 @@
 			<section class="form login">
 				<form action="alterarBND.php" method="POST" >
 					<header>Adicionar Nova Banda</header>
+					<input type="hidden" name="id" value="<?php echo $id ?>">
 					<div class="field input">
 						<label>Nome da Banda</label>
 						<input type="text" placeholder="Digite o nome da banda..." name="nm_banda" value="<?php echo $nm_banda ?>">

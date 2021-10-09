@@ -3,9 +3,9 @@
     $erros = array('preco' => '','nm_banda' => '', 'data' => '', 'horario' => '', 'local' => '', 'estoque' => '', 'id_banda' => '', 'formulario' => '');
     $preco = $nm_banda = $data = $horario = $local = $estoque = $id_banda = $banda = '';
 
-	if(isset($_POST['alterarSHOW'])){
+	if(isset($_POST['alterar'])){
 		//Limpa os dados de sql injection
-		$id = mysqli_real_escape_string($conn,$_POST['id']);
+		$id = mysqli_real_escape_string($conn,$_POST['id_show']);
 				
 		//Monta a query
 		$sql = "SELECT * FROM tb_local l INNER JOIN tb_banda b ON b.id_banda = l.id_banda WHERE l.id = $id;";
@@ -109,6 +109,7 @@
         }else {		
 
 			// Limpador de codigos
+            $id = mysqli_real_escape_string($conn, $_POST['id']);
             $preco = mysqli_real_escape_string($conn, $_POST['preco']);
             $data = mysqli_real_escape_string($conn, $_POST['data']);
             $horario = mysqli_real_escape_string($conn, $_POST['horario']);
@@ -137,6 +138,7 @@
 			<section class="form login">
 				<form action="alterarSHOW.php" method="POST" >
 					<header>Alterar Dados do Show</header>
+					<input type="hidden" name="id" value="<?php echo $id ?>">
 					<div class="field input">
 						<label>Nome da Banda</label>
 						<input type="text" placeholder="Digite o nome da banda..." name="nm_banda" value="<?php echo $nm_banda ?>">
