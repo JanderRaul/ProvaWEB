@@ -75,7 +75,8 @@
 			cursor: pointer;
 		}
 		.shows{
-			border-radius: 20px; 
+			margin-top: -20px;
+			border-radius: 20px 20px 0 0; 
 			background: #000;
 		}
 		.shows h4{
@@ -200,6 +201,72 @@
 		}
 		.titulo-inf form{
 			margin: 20px;
+		}
+		.slideshow{
+			margin: 0;
+			padding: 0;
+			height: 100vh;
+			background: #ddd;
+		}
+		.content3{
+			height: 520px;
+			width: 935px;
+			border-radius: 20px;
+			overflow: hidden;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -45%);
+		}
+		.navigation{
+			position: absolute;
+			bottom: 20px;
+			left: 50%;
+			transform: translate(-50%);
+			display: flex;
+		}
+		.bar{
+			width: 70px;
+			height: 17px;
+			border: 2px solid #fff;
+			margin:6px;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: 0.3s;
+		}
+		.bar:hover{
+			background-color: #fff;
+		}
+		.content3 input{
+			display: none;
+		}
+		.slides{
+			display: flex;
+			width: 500%;
+			height: 100%;
+		}
+		.slide{
+			width: 20%;
+			transition: .6s ease-in;
+		}
+		.slide img{
+			width: 100%;
+			height: 100%;
+		}
+		#slide1:checked ~ .s1{
+			margin-left: 0;
+		}
+		#slide2:checked ~ .s1{
+			margin-left: -20%;
+		}
+		#slide3:checked ~ .s1{
+			margin-left: -40%;
+		}
+		#slide4:checked ~ .s1{
+			margin-left: -60%;
+		}
+		#slide5:checked ~ .s1{
+			margin-left: -80%;
 		}
 	</style>
 </head>
