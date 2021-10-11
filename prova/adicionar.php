@@ -91,7 +91,7 @@
             $local = mysqli_real_escape_string($conn, $_POST['local']);
 
 			// Criando a query
-			$sql = "INSERT INTO tb_local(id_banda, data, horario, estoque, local, preco) VALUES('$id_banda', '$data', '$horario', '$estoque', '$local', '$preco')";
+			$sql = "INSERT INTO tb_local(id_banda, data, horario, estoque, local, preco) VALUES('$id_banda', STR_TO_DATE('$data', '%Y-%m-%d'), '$horario', '$estoque', '$local', '$preco')";
 			
 			// Salva no banco de dados
 			if(mysqli_query($conn, $sql)){
@@ -118,12 +118,12 @@
 					</div>
 					<div class="field input">
 						<label>Data</label>
-						<input type="text" placeholder="Digite a data no formato DD/MM/AAAA" name="data" value="<?php echo $data ?>">
+						<input type="date" placeholder="Digite a data no formato DD/MM/AAAA" name="data" value="<?php echo $data ?>">
 						<div class="red-text"><?php echo $erros['data']; ?></div>	
 					</div>
 					<div class="field input">
 						<label>Horario</label>
-						<input type="text" placeholder="Digite o horario no formato hh:mm" name="horario" value="<?php echo $horario ?>">
+						<input type="time" placeholder="Digite o horario no formato hh:mm" name="horario" value="<?php echo $horario ?>">
 						<div class="red-text"><?php echo $erros['horario']; ?></div>	
 					</div>
 					<div class="field input">
