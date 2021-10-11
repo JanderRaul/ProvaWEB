@@ -38,18 +38,14 @@
 <!DOCTYPE html>
 <html>
 <?php include('templates/header.php') ?>
-	<div class="bandas" id="bd" style="border-radius: 20px; margin: 0 20px">
-		<div class="titulo-inf">
-			<h4 style="font-family: 'New Rocker', cursive; font-size: 48px; border-radius: 10px; background: #FFF; padding: 30px 10px; color: #010f1f;"><?php echo htmlspecialchars($banda['nm_banda']); ?></h4>
-			<form action="alterarBND.php" method="POST">
-				<input type="hidden" name="id_banda" value="<?php echo $banda['id_banda']; ?>">
-				<input type="submit" name="alterarBND" value="Editar" class="btn black z-depth-0">
-			</form>
-			<form action="informacao.php" method="POST">
-                    <input type="hidden" name="id_banda" value="<?php echo $banda['id_banda']; ?>">
-                    <input type="submit" name="delete" value="Remover" class="btn red z-depth-0">
-                </form>		
-		</div>
+	<div class="infShow">
+        <div class="container">
+            <img src="images/homem-do-rock.png" alt="Mão do Rock">
+            <div class="center">
+                <h4><?php echo htmlspecialchars($banda['nm_banda']); ?></h4>
+                <p style="font-size: 18px;padding: 0 80px;">Aqui você vai encontra algumas curiosidade sobre a origem da sua banda preferida e o nome dos seus atuais integrantes.</p>
+            </div>            
+        </div> 		
 		<div class="col s12 md3" style="margin: 0 30px; padding-bottom: 10px;">
 			<div class="card z-depth-0" style="font-size: 17px; border-radius: 10px; background: #010f1f; color: #fff;">
 				<div class="card-content">
@@ -60,6 +56,16 @@
 				</div>
 			</div>
 		</div>
-	</div>
+        <div class="titulo-inf">
+            <form action="alterarBND.php" method="POST">
+                <input type="hidden" name="id_banda" value="<?php echo $banda['id_banda']; ?>">
+                <input type="submit" name="alterarBND" value="Editar" class="btn black z-depth-0">
+            </form>
+            <form action="informacao.php" method="POST">
+                    <input type="hidden" name="id_banda" value="<?php echo $banda['id_banda']; ?>">
+                    <input type="submit" name="delete" value="Remover" class="btn red z-depth-0">
+            </form>		
+        </div>
+	</div>    
 	<?php include('templates/footer.php') ?>
 </html>

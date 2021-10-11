@@ -7,6 +7,8 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=New+Rocker&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="sortcut icon" href="svg/logo.svg" type="image/svg" />
 	<style type="text/css">
 		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
 		.botao{
@@ -74,29 +76,21 @@
 			border-radius: 5px;
 			cursor: pointer;
 		}
-		.shows{
-			margin-top: -20px;
-			border-radius: 20px 20px 0 0; 
-			background: #000;
-		}
-		.shows h4{
-			font-family: 'New Rocker', cursive; font-size: 20px; 
-			margin-left: 10px; color: #fff; 
-			padding: 5px; 
-			margin-top: 0; 
-			padding: 10px 0 0 5px;
-		}
 		.bandas{
-			border-radius: 20px 20px 0 0; 
 			background: #fff;
 		}
+		.shows{
+			background: #000;
+		}
 		.bandas h4{
-			font-family: 'New Rocker', cursive; font-size: 20px; 
-			margin-left: 10px; 
-			color: #000; 
-			padding: 5px; 
-			margin-top: 10px; 
-			padding: 10px 0 0 5px;"
+			font-family: 'New Rocker', cursive; 
+			font-size: 32px;
+			color: #000;
+		}
+		.shows h4{
+			font-family: 'New Rocker', cursive; 
+			font-size: 32px;
+			color: #fff;
 		}
 		.fundo{
 			height: 600px;
@@ -109,7 +103,6 @@
 			margin: 0px;
 			padding: 0;
 			background: #000;
-			border-radius: 20px;
 			box-sizing: border-box;
 			font-family: 'Poppins', sans-serif;
 			padding: 50px;
@@ -206,7 +199,7 @@
 			margin: 0;
 			padding: 0;
 			height: 100vh;
-			background: #ddd;
+			background: #fff;
 		}
 		.content3{
 			height: 520px;
@@ -268,6 +261,151 @@
 		#slide5:checked ~ .s1{
 			margin-left: -80%;
 		}
+		.material-icons {
+			font-family: 'Material Icons';
+			font-weight: normal;
+			font-style: normal;
+			font-size: 24px;  /* Preferred icon size */
+			display: inline-block;
+			line-height: 1;
+			text-transform: none;
+			letter-spacing: normal;
+			word-wrap: normal;
+			white-space: nowrap;
+			direction: ltr;
+			color: #010f1f;
+
+			/* Support for all WebKit browsers. */
+			-webkit-font-smoothing: antialiased;
+			/* Support for Safari and Chrome. */
+			text-rendering: optimizeLegibility;
+
+			/* Support for Firefox. */
+			-moz-osx-font-smoothing: grayscale;
+
+			/* Support for IE. */
+			font-feature-settings: 'liga';
+			}
+			.bandas .container{
+				font-weight: 700;
+				color: #000;				
+    			width: 85%;
+				display: flex;
+				align-items: center;
+				margin-top: 80px;
+				margin-bottom: 40px;
+			}
+			.shows .container{
+				font-weight: 700;
+				color: #fff;				
+    			width: 85%;
+				display: flex;
+				align-items: center;
+				margin-top: 40px;
+				margin-bottom: 40px;
+			}
+			.infShow .container{
+				font-weight: 700;
+				color: #fff;				
+    			width: 85%;
+				display: flex;
+				align-items: center;
+				margin-top: 40px;
+				margin-bottom: 40px;
+			}
+			.infShow .container img{
+				margin-top: 40px;
+			}
+			.bandas .container img{
+				margin-top: 40px;
+				margin-right: 60px;
+			}
+			.shows .container img{
+				margin-right: 60px;
+			}
+			.bandas .row,
+			.shows .row {
+				margin-left: 80px;
+				margin-right: 80px;
+				margin-bottom: 20px;
+			}
+			nav ul a.btn{
+				margin-left: 0;
+			}
+			.infShow{
+				background: #fff;				
+				border-radius: 20px; 
+				margin-top: 40px;
+				margin-left: 60px;
+				margin-right: 60px;
+			}
+			.infShow .container{
+				color: #010f1f;
+			}
+			.infShow h4{
+				font-family: 'New Rocker', cursive; 
+				font-size: 48px;
+				color: #010f1f;
+			}
+			.infShow .card {
+				margin: 0 60px;
+				font-size: 17px; 
+				border-radius: 10px; 
+				background: #010f1f; 
+				color: #fff;
+			}
+			.infShow .card h6{
+				font-family: 'New Rocker', cursive; 
+				font-size: 32px; 
+				border-radius: 10px;
+				background: #FFF; 
+				padding: 15px 0; 
+				color: #010f1f;
+			}
+			.infShow form{
+				padding: 0;
+			}
+			.infShow form .btn-size{
+				width: 200px;
+				height: 55px;
+			}
+			.infShow .ingressos{
+				align-items: center;
+   				justify-content: space-between;				
+				display: flex;
+				border: 2px dashed #010f1f; 
+				border-radius: 10px;
+				margin: 10px 60px;
+				padding: 20px;
+				background: #9bf398;
+			}
+			.infShow .ingressos img{
+				height: 200px;
+				border-radius: 10px;
+			}
+			.infShow .ingressos .inf{
+				font-size: 18px;
+				font-weight: 800;
+			}
+			.ingressos{
+				margin-bottom: 40px;
+			}
+			.ingressos .inf{
+				width: 60%;
+			}
+			.inf .linha{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				color: #010f1f;
+			}
+			.ingressos p,
+			.ingressos h4{
+				margin: 0;
+			}
+			.inf .linha p{
+				margin: 0;
+			}
 	</style>
 </head>
 <body style="background-color: #000;">
@@ -279,7 +417,8 @@
 			<li><a href="#ct">Contatos</a></li>
 		</ul>
 		<ul id="nav-mobile" class="right hide-on-small-and-down">
-			<li><a href="adicionarBND.php" class="btn botao z-depht-0">Adicionar Banda</a></li> 
-			<li><a href="adicionar.php" class="btn botao z-depht-0">Adicionar Show</a></li> 
+			<li><a href="carrinho.php" class="btn botao z-depht-0"><span class="material-icons">shopping_cart</span></a></li> 
+			<li><a href="adicionarBND.php" class="btn botao z-depht-0"><span class="material-icons">group_add</span></a></li> 
+			<li><a href="adicionar.php" class="btn botao z-depht-0"><span class="material-icons">celebration</span></a></li> 
 		</ul>
 	</nav>

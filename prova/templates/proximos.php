@@ -1,5 +1,12 @@
-<div class="shows" id="sh">
-    <h4>Próximos shows</h4>
+<div class="shows" id="sh">    
+    <div class="container">
+        <div class="texto">
+            <h4>Próximos shows</h4>
+            <p>Precisando de ajuda para escolher em quais shows ir? Dá uma olhadinha aqui em baixo. Você vai encontra a agenda com os melhores eventos de Rock do pais. São diversas opções para curtir, as bandas mais famosos do Brasil e do mundo...</p>
+            <p>Aproveite!</p>
+        </div>
+        <img src="images/estrela-do-rock.png" alt="Estrela do Rock">
+    </div>
     <div class="row">
         <?php foreach($shows as $show) { ?>
             <div class="col s6 md3">

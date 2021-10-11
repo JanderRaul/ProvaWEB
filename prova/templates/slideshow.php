@@ -8,19 +8,19 @@
             <input type="radio" name="slide" id="slide5">
 
             <div class="slide s1">
-                <img src="images/arvores.jpg">
+                <img src="images/rolling.jpg">
             </div>
             <div class="slide">
-                <img src="images/camera.jpg">
+                <img src="images/metallica.jpg">
             </div>
             <div class="slide">
-                <img src="images/ceu.jpg">
+                <img src="images/sabbath.jpg">
             </div>
             <div class="slide">
-                <img src="images/grama.jpg">
+                <img src="images/aerosmith.jpg">
             </div>
             <div class="slide">
-                <img src="images/mar.jpg">
+                <img src="images/guns.jpg">
             </div>
         </div>
 

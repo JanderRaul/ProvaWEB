@@ -12,6 +12,7 @@ body{
     justify-content: center;
     min-height: 100vh;
     background: #f7f7f7;
+    
 }
 .wrapper{
     background: #fff;
@@ -302,9 +303,17 @@ form .name-details .field:last-child{
     width: 55px;
     border: none;
     outline: none;
-    background: #333;
+    background: #b92c2c;
     color: #fff;
     font-size: 19px;
     cursor: pointer;
     border-radius: 0 5px 5px 0;
+    
+}
+
+.shows .container img{
+   align-items: center;
+   justify-content: space-between;
+   font-weight: 800;
+   width: 120px;
 }

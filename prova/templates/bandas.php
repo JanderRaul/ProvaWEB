@@ -1,5 +1,13 @@
 <div class="bandas" id="bd">
-    <h4>Bandas</h4>
+    <div class="container">
+        <img src="images/baixo.png" alt="Estrela do Rock">
+        <div class="texto">
+            <h4>Bandas</h4>
+            <p>Quer saber mais sobre sua banda faovrita? Clicando em informações, você vai encontra algumas curiosidade sobre a origem da sua banda preferida e o nome dos seus atuais integrantes. São varias bandas para você connhecer um pouca mais sobre sua historia. Quem sabe não encontra mais uma que você goste</p>
+            <p>Click e confira!!!</p>
+        </div>
+        
+    </div>
     <div class="row">
         <?php foreach($bandas as $banda) { ?>
             <div class="col s4 md3">

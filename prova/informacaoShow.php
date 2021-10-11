@@ -38,9 +38,38 @@
 <!DOCTYPE html>
 <html>
 <?php include('templates/header.php') ?>
-	<div class="bandas" id="bd" style="border-radius: 20px; margin: 0 20px">
-		<div class="titulo-inf">
-			<h4 style="font-family: 'New Rocker', cursive; font-size: 48px; border-radius: 10px; background: #FFF; padding: 30px 10px; color: #010f1f;"><?php echo htmlspecialchars($show['nm_banda']); ?></h4>
+	<div class="infShow">
+        <div class="container">
+            <div class="texto">
+                <h4><?php echo htmlspecialchars($show['nm_banda']); ?></h4>
+                <p>Confira abaixo as informações desse inclivel show!!! Se quiser um ingresso basta clicar em comprar para garantir o seu lugar...</p>
+                <p style="font-weight: 800; font-size: 18px;">Mas corre os ingressos são limitados!!!</p>
+            </div>
+            <img src="images/rock-and-roll.png" alt="Mão do Rock">
+        </div>
+		<div class="col s12 md3" style="margin: 0 30px; padding-bottom: 10px;">
+			<div class="card z-depth-0">
+				<div class="card-content">
+					<span>Data</span>
+					<h6 class="center"><?php echo htmlspecialchars($show['data']); ?></h6>
+					<span>Horario</span>
+					<h6 class="center"><?php echo htmlspecialchars($show['horario']); ?></h6>
+					<span>Local</span>
+					<h6 class="center"><?php echo htmlspecialchars($show['local']); ?></h6>
+                    <span>Estoque</span>
+					<h6 class="center"><?php echo htmlspecialchars($show['estoque']); ?></h6>
+                    <span>Preço Inteiro</span>
+					<h6 class="center">R$ <?php echo htmlspecialchars($show['preco']); ?></h6>
+				</div>
+			</div>
+		</div>
+        <div class="center">
+            <form action="comprar.php" method="POST">
+                <input type="hidden" name="id" value="<?php echo $show['id']; ?>">
+                <input type="submit" name="comprar" value="Comprar" class="btn btn-size green z-depth-0">
+            </form>
+        </div>
+        <div class="titulo-inf">
 			<form action="alterarSHOW.php" method="POST">
 				<input type="hidden" name="id_show" value="<?php echo $show['id']; ?>">
 				<input type="submit" name="alterar" value="Editar" class="btn black z-depth-0">
@@ -49,29 +78,7 @@
                 <input type="hidden" name="id" value="<?php echo $show['id']; ?>">
                 <input type="submit" name="delete" value="Remover" class="btn red z-depth-0">
             </form>		
-		</div>
-		<div class="col s12 md3" style="margin: 0 30px; padding-bottom: 10px;">
-			<div class="card z-depth-0" style="font-size: 17px; border-radius: 10px; background: #010f1f; color: #fff;">
-				<div class="card-content">
-					<span>Data</span>
-					<h6 class="center" style="font-family: 'New Rocker', cursive; font-size: 32px; border-radius: 10px; background: #FFF; padding: 30px 10px; color: #010f1f;"><?php echo htmlspecialchars($show['data']); ?></h6>
-					<span>Horario</span>
-					<h6 class="center" style="font-family: 'New Rocker', cursive; font-size: 32px; border-radius: 10px; background: #FFF; padding: 30px 10px; color: #010f1f;"><?php echo htmlspecialchars($show['horario']); ?></h6>
-					<span>Local</span>
-					<h6 class="center" style="font-family: 'New Rocker', cursive; font-size: 32px; border-radius: 10px; background: #FFF; padding: 30px 10px; color: #010f1f;"><?php echo htmlspecialchars($show['local']); ?></h6>
-                    <span>Estoque</span>
-					<h6 class="center" style="font-family: 'New Rocker', cursive; font-size: 32px; border-radius: 10px; background: #FFF; padding: 30px 10px; color: #010f1f;"><?php echo htmlspecialchars($show['estoque']); ?></h6>
-                    <span>Preço Inteiro</span>
-					<h6 class="center" style="font-family: 'New Rocker', cursive; font-size: 32px; border-radius: 10px; background: #FFF; padding: 30px 10px; color: #010f1f;">R$ <?php echo htmlspecialchars($show['preco']); ?></h6>
-				</div>
-			</div>
-		</div>
-        <div class="center">
-            <form action="comprar.php" method="POST">
-                <input type="hidden" name="id" value="<?php echo $show['id']; ?>">
-                <input type="submit" name="comprar" value="Comprar" class="btn green z-depth-0">
-            </form>
-        </div>	
+		</div>	
 	</div>
 	<?php include('templates/footer.php') ?>
 </html>
